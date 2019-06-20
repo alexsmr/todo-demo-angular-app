@@ -2,8 +2,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 
-import {TodoListComponent} from './todo-list.component';
-import {Todo} from '../../models/todo';
+import {TodoListComponent} from '../todo-list.component';
+import {Todo} from '../../../models/todo';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;

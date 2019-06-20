@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { TodoListItemComponent } from './todo-list-item.component';
-import { Todo } from '../../models/todo';
+import { TodoListItemComponent } from '../todo-list-item.component';
+import { Todo } from '../../../models/todo';
 
 describe('TodoListItemComponent', () => {
   let component: TodoListItemComponent;

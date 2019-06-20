@@ -1,11 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {TodoDataService} from './services/todo-data.service';
-import {Todo} from './models/todo';
+import {TodoDataService} from '../../services/todo-data.service';
+import {Todo} from '../../models/todo';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template:
+  `<app-root-ui
+    [todos]="todos"
+    (onAddTodo)="onAddTodo"
+    (onRemoveTodo)="onRemoveTodo"
+    (onToggleTodoComplete)="onToggleTodoComplete"
+  ></app-root-ui>`,
   providers: [TodoDataService]
 })
 export class AppComponent implements OnInit {
