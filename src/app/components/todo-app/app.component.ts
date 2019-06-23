@@ -7,9 +7,9 @@ import {Todo} from '../../models/todo';
   template:
   `<app-root-ui
     [todos]="todos"
-    (onAddTodo)="onAddTodo"
-    (onRemoveTodo)="onRemoveTodo"
-    (onToggleTodoComplete)="onToggleTodoComplete"
+    (onAddTodo)="onAddTodo($event)"
+    (onRemoveTodo)="onRemoveTodo($event)"
+    (onToggleTodoComplete)="onToggleTodoComplete($event)"
   ></app-root-ui>`,
   providers: [TodoDataService]
 })
