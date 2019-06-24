@@ -28,6 +28,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/assets/css/global.css",
               "src/assets/css/todo-app.css",
               "src/assets/css/todo-common.css"
             ],

@@ -1,10 +1,8 @@
 import {moduleMetadata, storiesOf} from '@storybook/angular';
 import {withKnobs} from '@storybook/addon-knobs';
 import {centered} from '@storybook/addon-centered/angular';
-import {action} from '@storybook/addon-actions';
-import {TodoListComponent} from '../todo-list.component';
+import {TodoListFooterComponent} from '../todo-list-footer.component';
 import {CommonModule} from '@angular/common';
-import {TodoListItemComponent} from "../../todo-list-item/todo-list-item.component";
 
 const TODOS = [
   {
@@ -29,18 +27,14 @@ storiesOf('Components', module)
   .addDecorator(withKnobs)
   .addDecorator(moduleMetadata({
     imports: [CommonModule],
-    declarations: [TodoListComponent, TodoListItemComponent]
+    declarations: [TodoListFooterComponent]
   }))
-  .add('TODO List', () => ({
+  .add('TODO List Footer', () => ({
     template:
-      `<app-todo-list
+      `<app-todo-list-footer
         [todos]="todos"
-        (toggleComplete)="toggleComplete"
-        (remove)="remove"
-      ></app-todo-list>`,
+      ></app-todo-list-footer>`,
     props: {
-      todos: TODOS,
-      toggleComplete: action('Toggle Complete'),
-      remove: action('Remove ToDo')
+      todos: TODOS
     },
   }));

@@ -20,9 +20,9 @@ storiesOf('Components', module)
       ></app-todo-list-item>`,
     props: {
       todo: {
-        'title': text('Title', 'Make restaurant reservation'),
-        'complete': boolean('Complete', true),
-        'id': 3
+        title: text('Title', 'Make restaurant reservation'),
+        complete: boolean('Complete', true),
+        id: 3
       },
       toggleComplete: action('complete was toggled')
     },
