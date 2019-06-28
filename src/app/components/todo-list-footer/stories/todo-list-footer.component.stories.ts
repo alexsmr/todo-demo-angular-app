@@ -3,6 +3,7 @@ import {withKnobs} from '@storybook/addon-knobs';
 import {centered} from '@storybook/addon-centered/angular';
 import {TodoListFooterComponent} from '../todo-list-footer.component';
 import {CommonModule} from '@angular/common';
+import ReadMe from '../README.md';
 
 const TODOS = [
   {
@@ -37,4 +38,7 @@ storiesOf('Components', module)
     props: {
       todos: TODOS
     },
-  }));
+  }),
+  {
+      notes: ReadMe
+  });

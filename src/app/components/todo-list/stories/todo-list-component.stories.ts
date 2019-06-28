@@ -5,6 +5,7 @@ import {action} from '@storybook/addon-actions';
 import {TodoListComponent} from '../todo-list.component';
 import {CommonModule} from '@angular/common';
 import {TodoListItemComponent} from "../../todo-list-item/todo-list-item.component";
+import ReadMe from '../README.md';
 
 const TODOS = [
   {
@@ -35,12 +36,15 @@ storiesOf('Components', module)
     template:
       `<app-todo-list
         [todos]="todos"
-        (toggleComplete)="toggleComplete"
-        (remove)="remove"
+        (toggleComplete)="toggleComplete($event)"
+        (remove)="remove($event)"
       ></app-todo-list>`,
     props: {
       todos: TODOS,
       toggleComplete: action('Toggle Complete'),
       remove: action('Remove ToDo')
     },
-  }));
+  }),
+  {
+      notes: ReadMe
+  });

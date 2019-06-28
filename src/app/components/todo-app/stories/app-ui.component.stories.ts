@@ -8,6 +8,7 @@ import {TodoListItemComponent} from '../../todo-list-item/todo-list-item.compone
 import {TodoListHeaderComponent} from '../../todo-list-header/todo-list-header.component';
 import {TodoListFooterComponent} from '../../todo-list-footer/todo-list-footer.component';
 import {TodoListComponent} from '../../todo-list/todo-list.component';
+import ReadMe from '../README.md';
 
 const TODOS = [
   {
@@ -44,9 +45,9 @@ storiesOf('Components', module)
     template:
       `<app-root-ui
         [todos]="todos"
-        (onAddTodo)="onAddTodo"
-        (onRemoveTodo)="onRemoveTodo"
-        (onToggleTodoComplete)="onToggleTodoComplete"
+        (onAddTodo)="onAddTodo($event)"
+        (onRemoveTodo)="onRemoveTodo($event)"
+        (onToggleTodoComplete)="onToggleTodoComplete($event)"
       ></app-root-ui>`,
     props: {
       todos: TODOS,
@@ -54,4 +55,7 @@ storiesOf('Components', module)
       onRemoveTodo: action('Remove ToDo'),
       onToggleTodoComplete: action('Toggle ToDo')
     },
-  }));
+  }),
+  {
+      notes: ReadMe
+  });

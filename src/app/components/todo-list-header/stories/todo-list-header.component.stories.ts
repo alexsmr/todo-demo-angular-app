@@ -4,6 +4,7 @@ import {centered} from '@storybook/addon-centered/angular';
 import {TodoListHeaderComponent} from '../todo-list-header.component';
 import {CommonModule} from '@angular/common';
 import {action} from '@storybook/addon-actions';
+import ReadMe from '../README.md';
 
 storiesOf('Components', module)
   .addDecorator(centered)
@@ -15,9 +16,12 @@ storiesOf('Components', module)
   .add('TODO List Header', () => ({
     template:
       `<app-todo-list-header
-        (add)="add"
+        (add)="add($event)"
       ></app-todo-list-header>`,
     props: {
       add: action('Add new TODO')
     },
-  }));
+  }),
+  {
+      notes: ReadMe
+  });
