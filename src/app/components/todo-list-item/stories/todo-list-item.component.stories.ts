@@ -4,6 +4,7 @@ import {centered} from '@storybook/addon-centered/angular';
 import {action} from '@storybook/addon-actions';
 import {TodoListItemComponent} from '../todo-list-item.component';
 import {CommonModule} from '@angular/common';
+import ReadMe from '../README.md';
 
 storiesOf('Components', module)
   .addDecorator(centered)
@@ -16,14 +17,17 @@ storiesOf('Components', module)
     template:
       `<app-todo-list-item
         [todo]="todo"
-        (toggleComplete)="toggleComplete"
+        (toggleComplete)="toggleComplete($event)"
       ></app-todo-list-item>`,
     props: {
       todo: {
-        title: text('Title', 'Make restaurant reservation'),
+        title: text('Title', 'Make restaurant reservation!'),
         complete: boolean('Complete', true),
-        id: 3
+        id: 3,
       },
-      toggleComplete: action('complete was toggled')
+      toggleComplete: action('complete was toggled'),
     },
-  }));
+  }),
+  {
+      notes: ReadMe
+  });
